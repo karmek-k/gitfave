@@ -1,0 +1,9 @@
+{
+  "name": "gitfave",
+  "version": "0.0.0",
+  "description": "Easily group your starred repositories on GitHub",
+  "main": "dist/index.js",
+  "repository": "https://github.com/karmek-k/gitfave.git",
+  "author": "Bartosz Gleń",
+  "license": "MIT"
+}
