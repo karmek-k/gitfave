@@ -13,6 +13,9 @@ nunjucks.configure(path.join('src', 'views'), {
   express: app
 });
 
+// Middleware
+app.use(express.static(path.join('src', 'assets')));
+
 // Routes
 app.use('/', MainRouter);
 
