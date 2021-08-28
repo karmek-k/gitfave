@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "concurrently \"yarn:build:watch\" \"yarn:start:watch\"",
     "start": "node .",
-    "start:watch": "nodemon .",
+    "start:watch": "nodemon . -e ts,json,njk,css",
     "build": "tsc",
     "build:watch": "tsc --watch"
   }
