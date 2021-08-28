@@ -2,5 +2,10 @@
 
 {% block content %}
   <h1>GitFave</h1>
-  <a href="/auth/login">Log in with GitHub</a>
+  
+  {% if not loggedIn %}
+    <a href="/auth/login">Log in with GitHub</a>
+  {% else %}
+    <a href="#">Go to the dashboard</a>
+  {% endif %}
 {% endblock %}
