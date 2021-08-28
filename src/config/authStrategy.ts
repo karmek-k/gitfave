@@ -1,5 +1,10 @@
+import passport from 'passport';
 import { Strategy as GitHubStrategy } from 'passport-github2';
 import User from '../models/User';
+
+passport.serializeUser((user, done) => done(null, user));
+
+passport.deserializeUser((user: User, done) => done(null, user));
 
 export default function (
   id: string,
