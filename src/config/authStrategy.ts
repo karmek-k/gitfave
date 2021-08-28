@@ -20,7 +20,7 @@ export default function (
     async function (
       accessToken: any,
       refreshToken: any,
-      profile: { id: string },
+      profile: { id: number },
       done: (err: any, user?: any) => any
     ) {
       let user: User | null;
