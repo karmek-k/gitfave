@@ -2,6 +2,8 @@ import 'reflect-metadata';
 import path from 'path';
 import express from 'express';
 import nunjucks from 'nunjucks';
+import dotenv from 'dotenv';
+dotenv.config();
 
 import MainRouter from './controllers/main';
 
