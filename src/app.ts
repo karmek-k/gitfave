@@ -3,6 +3,7 @@ import path from 'path';
 import express from 'express';
 import nunjucks from 'nunjucks';
 import passport from 'passport';
+import session from 'express-session';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -21,7 +22,15 @@ nunjucks.configure(path.join('src', 'views'), {
 
 // Middleware
 app.use(express.static(path.join('src', 'assets')));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET!,
+    resave: false,
+    saveUninitialized: false
+  })
+);
 app.use(passport.initialize());
+app.use(passport.session());
 passport.use(
   createAuthStrategy(
     process.env.CLIENT_ID!,
