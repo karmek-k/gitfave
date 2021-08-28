@@ -2,6 +2,8 @@ import path from 'path';
 import express from 'express';
 import nunjucks from 'nunjucks';
 
+import MainRouter from './controllers/main';
+
 const app = express();
 const port = process.env.PORT ?? 8000;
 
@@ -11,8 +13,7 @@ nunjucks.configure(path.join('src', 'views'), {
   express: app
 });
 
-app.get('/', (req, res) => {
-  return res.render('index.njk');
-});
+// Routes
+app.use('/', MainRouter);
 
 app.listen(port, () => console.log(`Listening at port ${port}`));
