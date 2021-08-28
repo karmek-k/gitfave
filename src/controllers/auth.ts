@@ -3,7 +3,7 @@ import passport from 'passport';
 
 const router = Router();
 
-router.get('/login');
+router.get('/login', passport.authenticate('github', { scope: [] }));
 
 router.get(
   '/callback',
