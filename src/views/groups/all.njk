@@ -6,4 +6,16 @@
 
 {% block content %}
   <h1>Your repo groups</h1>
+
+  <ul>
+    {% for group in groups %}
+      <li>{{ group.name }}</li>
+    {% endfor %}
+  </ul>
+
+  {% if not groups %}
+    <p>
+      You don't have any groups. <a href="#">Create one?</a>
+    </p>
+  {% endif %}
 {% endblock %}
