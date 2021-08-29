@@ -1,0 +1,23 @@
+{% extends 'base.njk' %}
+
+{% block title %}
+  Your repo groups
+{% endblock %}
+
+{% block content %}
+  <h1>Your repo groups</h1>
+
+  <a href="/groups/new">Create a group</a>
+
+  <ul>
+    {% for group in groups %}
+      <li>{{ group.name }}</li>
+    {% endfor %}
+  </ul>
+
+  {% if not groups %}
+    <p>
+      You don't have any groups.
+    </p>
+  {% endif %}
+{% endblock %}
