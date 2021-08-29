@@ -1,9 +1,12 @@
 import { Router } from 'express';
+import User from '../models/User';
 
 const router = Router();
 
 router.get('/', async (req, res) => {
-  return res.render('categories/all.njk');
+  const { groups } = req.user as User;
+
+  return res.render('groups/all.njk', { groups });
 });
 
 export default router;
