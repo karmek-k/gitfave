@@ -7,7 +7,7 @@ function validate(chain: ValidationChain[]): any {
     (req: any, res: any, next: NextFunction) => {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
-        return res.redirect();
+        return res.redirect(req.baseUrl + req.url);
       }
 
       next();
