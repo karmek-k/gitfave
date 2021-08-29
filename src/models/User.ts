@@ -1,9 +1,13 @@
-import { BaseEntity, Entity, PrimaryColumn } from 'typeorm';
+import { BaseEntity, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import RepoGroup from './RepoGroup';
 
 @Entity()
 class User extends BaseEntity {
   @PrimaryColumn()
-  id!: string;
+  id!: number;
+
+  @OneToMany(() => RepoGroup, rg => rg.user)
+  groups!: RepoGroup[];
 }
 
 export default User;

@@ -3,5 +3,5 @@ export default function (req: any, res: any, next: any) {
     return next();
   }
 
-  return res.redirect('/auth/login');
+  return res.redirect('/');
 }

@@ -20,7 +20,7 @@ export default function (
     async function (
       accessToken: any,
       refreshToken: any,
-      profile: { id: string },
+      profile: { id: number },
       done: (err: any, user?: any) => any
     ) {
       let user: User | null;
@@ -34,6 +34,7 @@ export default function (
       if (!user) {
         user = new User();
         user.id = profile.id;
+        user.groups = [];
         await user.save();
       }
 
