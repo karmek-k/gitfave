@@ -1,0 +1,18 @@
+{% extends 'base.njk' %}
+
+{% block title %}
+  Create a repo group
+{% endblock %}
+
+{% block content %}
+  <h1>Create a repo group</h1>
+
+  <form method="POST">
+    <input type="hidden" name="_csrf" value="{{ csrfToken }}" />
+
+    <label for="name">Group name</label>
+    <input id="name" name="name" required />
+
+    <input type="submit" value="Create" />
+  </form>
+{% endblock %}
