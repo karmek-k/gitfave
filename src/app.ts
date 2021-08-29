@@ -11,6 +11,8 @@ import createAuthStrategy from './config/authStrategy';
 
 import MainRouter from './controllers/main';
 import AuthRouter from './controllers/auth';
+import DashboardRouter from './controllers/dashboard';
+import auth from './middleware/auth';
 
 const app = express();
 
@@ -42,5 +44,6 @@ passport.use(
 // Routes
 app.use('/', MainRouter);
 app.use('/auth', AuthRouter);
+app.use('/dashboard', auth, DashboardRouter);
 
 export default app;
