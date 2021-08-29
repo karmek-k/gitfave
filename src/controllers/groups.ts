@@ -14,4 +14,8 @@ router.get('/new', csrf, async (req, res) => {
   return res.render('groups/new.njk', { csrfToken: req.csrfToken() });
 });
 
+router.post('/new', csrf, async (req, res) => {
+  return res.send(req.body);
+});
+
 export default router;
