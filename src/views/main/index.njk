@@ -1,5 +1,9 @@
 {% extends 'base.njk' %}
 
+{% block title %}
+  Home
+{% endblock %}
+
 {% block content %}
   <h1>GitFave</h1>
   
@@ -9,6 +13,4 @@
     <a href="#">Go to the dashboard</a>
     <a href="/auth/logout">Log out</a>
   {% endif %}
-
-
 {% endblock %}
