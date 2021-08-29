@@ -25,6 +25,7 @@ nunjucks.configure(path.join('src', 'views'), {
 
 // Middleware
 app.use(express.static(path.join('src', 'assets')));
+app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     secret: process.env.SESSION_SECRET!,
