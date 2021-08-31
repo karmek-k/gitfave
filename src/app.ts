@@ -14,6 +14,7 @@ import AuthRouter from './controllers/auth';
 import DashboardRouter from './controllers/dashboard';
 import GroupsRouter from './controllers/groups';
 import auth from './middleware/auth';
+import { flash } from 'express-flash-message';
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use(
     saveUninitialized: false
   })
 );
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(
