@@ -15,7 +15,7 @@ class RepoGroup extends BaseEntity {
   @Column()
   name!: string;
 
-  @ManyToOne(() => User)
+  @ManyToOne(() => User, { cascade: true })
   user!: User;
 }
 

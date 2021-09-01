@@ -7,11 +7,17 @@
 {% block content %}
   <h1>Your repo groups</h1>
 
+  {% for errorMsg in errors %}
+    <p>Error: {{ errorMsg }}</p>
+  {% endfor %}
+
   <a href="/groups/new">Create a group</a>
 
   <ul>
     {% for group in groups %}
-      <li>{{ group.name }}</li>
+      <li>
+        <a href="/groups/{{ group.id }}">{{ group.name }}</a>
+      </li>
     {% endfor %}
   </ul>
 
